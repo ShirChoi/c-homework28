@@ -1,0 +1,19 @@
+﻿@model ProductViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<form method="post" asp-action="Edit" asp-controller="Product">
+    <div asp-validation-summary="All" />
+    <input type="hidden" asp-for="ID" />
+    <label>Name</label>
+    <input name="Name" value="@Model.Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label>Cost</label>
+    <input asp-for="Cost" />
+    <span asp-validation-for="Cost"></span> <br />
+    <select class="form-control" asp-for="ProductCategoryID" asp-items="@Model.Categories"></select>
+    <input class="btn" type="submit" title="Save" value="Save" />
+    <a class="btn" asp-controller="Product" asp-action="Index">Back</a>
+</form>

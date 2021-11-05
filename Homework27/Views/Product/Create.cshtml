@@ -1,0 +1,16 @@
+﻿@model ProductViewModel
+
+<form method="post" asp-action="Create" asp-controller="Product">
+    <div asp-validation-summary="All" />
+    <label>Name</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label>Cost</label>
+    <input asp-for="Cost" />
+    <span asp-validation-for="Cost"></span> <br />
+    <select data-live-search="true" class="form-control selectpicker" asp-for="ProductCategoryID" asp-items="@Model.Categories">
+    </select>
+    <input class="btn" type="submit" title="Create" value="Create" />
+    <input class="btn" type="reset" title="" value="Cancel" />
+</form>
